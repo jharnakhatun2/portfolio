@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JK | React developer</title>
+    <link href="./style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <!------------- small navbar ----------------->
+    <header class="bg-white bg-opacity-5 shadow-lg block md:hidden">
+      <div class="container mx-auto flex items-center justify-between h-16">
+        <a href="" class="flex items-center justify-center">
+          <span class="ml-4 uppercase font-black">JHARNA KHATUN</span>
+        </a>
+        <!-- toggle Button -->
+        <a href="javascript:void(0)" class="closebtn py-1 px-2 font-bold mr-4 text-xl" onclick="closeNav()"
+        >×</a
+      >
+        <button class="openBtn bg-[#444] hover:bg-gray text-white py-1 px-2 font-bold mr-4 hidden" onclick="openNav()">☰</button>
+      </div>
+    </header>
+    <!-- Dropdown Menu -->
+    <nav class="bg-[#e2e2e2] block md:hidden">
+      <ul class="divide-y divide-[#f8f8f8]">
+        <li class="px-5 py-3 active">
+          <a href="">
+            <span>About</span>
+          </a>
+        </li>
+        <li class="px-5 py-3 xl:p-8">
+          <a href="">
+            <span>Projects</span>
+          </a>
+        </li>
+        <li class="px-5 py-3">
+          <a href="">
+            <span>Blog</span>
+          </a>
+        </li>
+        <li class="font-semibold px-5 py-3">Contact me</li>
+      </ul>
+    </nav>
+    <!------------- large navbar ----------------->
+    <header class="bg-white bg-opacity-5 shadow-lg hidden md:block">
+      <div class="container mx-auto flex items-center h-20">
+        <a href="" class="flex items-center justify-center">
+          <span class="ml-4 uppercase font-black">JHARNA KHATUN</span>
+        </a>
+        <nav class="contents text-base lg:text-lg">
+          <ul class="mx-auto flex items-center">
+            <li class="p-5 xl:p-8 active">
+              <a href="">
+                <span>About</span>
+              </a>
+            </li>
+            <li class="p-5 xl:p-8">
+              <a href="">
+                <span>Projects</span>
+              </a>
+            </li>
+            <li class="p-5 xl:p-8">
+              <a href="">
+                <span>Blog</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <button class="border border-white rounded-full font-bold px-8 py-2">
+          Contact me
+        </button>
+      </div>
+    </header>
+
+    <script src="script.js"></script>
+  </body>
+</html>
