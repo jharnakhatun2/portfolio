@@ -11,4 +11,18 @@
     background: url("/src/images/1.png") no-repeat fixed center ;
     background-size: cover;
   }
- 
+  /* Dropdown hidden by default */
+.dropdown {
+  width: 100%;
+  height: auto;
+  left: 0;
+  top: 0;
+  transition: max-height 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+}
+
+/* Dropdown when open */
+.dropdown.open {
+  max-height: 300px;
+}

@@ -681,6 +681,10 @@ video {
   width: 100%;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .flex-row {
   flex-direction: row;
 }
@@ -893,6 +897,24 @@ body {
   background-size: cover;
 }
 
+/* Dropdown hidden by default */
+
+.dropdown {
+  width: 100%;
+  height: auto;
+  left: 0;
+  top: 0;
+  transition: max-height 0.3s ease;
+  max-height: 0;
+  overflow: hidden;
+}
+
+/* Dropdown when open */
+
+.dropdown.open {
+  max-height: 300px;
+}
+
 .last\:mr-0:last-child {
   margin-right: 0px;
 }
@@ -943,4 +965,3 @@ body {
     padding: 2rem;
   }
 }
- 
