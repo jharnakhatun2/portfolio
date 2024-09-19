@@ -2,11 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
 * {
     box-sizing: border-box;
   }
   body {
-    font-family: "Lato", sans-serif;
+   font-family: "Mulish", sans-serif;
     margin: 0;
     background: url("/src/images/1.png") no-repeat fixed center ;
     background-size: cover;
