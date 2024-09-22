@@ -3,12 +3,95 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Jharna Khatun - React Web Developer with 1.5 years of experience in building efficient and scalable web applications."
+    />
     <title>My Blogs</title>
+    <link href="./style.css" rel="stylesheet" />
   </head>
   <body>
-    <!-- Header will be dynamically inserted here -->
-    <div id="header-container"></div>
+     <!-- Header -->
+    <!------------- small navbar ----------------->
+    <header class="bg-white bg-opacity-5 shadow-lg block md:hidden">
+      <div class="container mx-auto flex items-center justify-between h-14">
+        <a href="index.html" class="flex items-center justify-center">
+          <span class="ml-4 uppercase font-black">JHARNA KHATUN</span>
+        </a>
+        <!-- toggle Button -->
+        <button
+          id="open"
+          class="bg-[#444] hover:bg-gray text-white py-1 px-2 font-bold mr-4 cursor-pointer block md:hidden"
+        >
+          ☰
+        </button>
+        <button
+          id="close"
+          class="py-1 px-2 font-bold mr-4 text-xl cursor-pointer hidden"
+        >
+          ×
+        </button>
+      </div>
+    </header>
+    <!-- Dropdown Menu -->
+    <nav id="dropdown" class="bg-[#e2e2e2] block md:hidden dropdown">
+      <ul class="divide-y divide-[#f8f8f8]">
+        <li class="px-5 py-3 active">
+          <a href="about.html">
+            <span>About</span>
+          </a>
+        </li>
+        <li class="px-5 py-3 xl:p-8">
+          <a href="projects.html">
+            <span>Projects</span>
+          </a>
+        </li>
+        <li class="px-5 py-3">
+          <a href="blogs.html">
+            <span>Blog</span>
+          </a>
+        </li>
+        <li class="font-semibold px-5 py-3">
+          <a href="">
+            <span>Contact me</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!------------- large navbar ----------------->
+    <header class="hidden md:block shadow-lg bg-white bg-opacity-5">
+      <div class="container mx-auto flex items-center h-16">
+        <a href="index.html" class="flex items-center justify-center">
+          <span class="ml-4 uppercase font-black">JHARNA KHATUN</span>
+        </a>
+        <nav class="contents text-base lg:text-md">
+          <ul class="mx-auto flex items-center">
+            <li class="p-5 xl:p-8 active">
+              <a href="about.html">
+                <span>About</span>
+              </a>
+            </li>
+            <li class="p-5 xl:p-8">
+              <a href="projects.html">
+                <span>Projects</span>
+              </a>
+            </li>
+            <li class="p-5 xl:p-8">
+              <a href="blogs.html">
+                <span>Blog</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <button
+          class="border border-white rounded-full font-bold px-8 py-2 hover:border-transparent hover:bg-neutral hover:text-white transition-all"
+        >
+          Contact me
+        </button>
+      </div>
+    </header>
 
+    <!------------------ Blogs page---------------------------->
     <main class="container mx-auto py-8 px-8 lg:px-0">
       <!-- header and total blogs  -->
       <div class="flex flex-row items-center">
@@ -276,6 +359,6 @@
         </div>
       </div>
     </main>
-    <script src="/src/js/common-header.js" defer></script>
+    <script src="./js/script.js"></script>
   </body>
 </html>

@@ -749,6 +749,10 @@ video {
   height: 100%;
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
 .w-1\/2 {
   width: 50%;
 }
@@ -1221,10 +1225,6 @@ body {
   max-height: 300px;
 }
 
-li{
-  list-style: none;
-}
-
 .last\:mr-0:last-child {
   margin-right: 0px;
 }
@@ -1395,11 +1395,6 @@ li{
     padding-left: 0px;
     padding-right: 0px;
   }
-
-  .lg\:text-lg {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
 }
 
 @media (min-width: 1280px) {
@@ -1412,3 +1407,4 @@ li{
   --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
