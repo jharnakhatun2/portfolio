@@ -71,7 +71,7 @@ function buttons(values, parentDiv) {
     parentDiv.appendChild(button);
   }
 }
-
+//call function for 4 times
 buttons(expertise,buttonParent);
 buttons(comfortable,buttonParent1);
 buttons(familiar,buttonParent2);
