@@ -28,3 +28,15 @@
   max-height: 300px;
 }
 
+/* bg-neutral rounded-sm px-2 py-1 text-xs font-normal hover:bg-white transition-all hover:text-primary */
+/*Skill buttons*/
+.skillBtn{
+border: solid white 1px;
+margin: 5px;
+padding: 2px 5px;
+background-color: transparent;
+transition: background-color .3s ease-in-out;
+}
+.skillBtn:hover{
+  background-color: white;
+}

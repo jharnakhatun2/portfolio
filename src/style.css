@@ -619,6 +619,11 @@ video {
   margin-bottom: 1rem;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -725,12 +730,12 @@ video {
   height: 2.5rem;
 }
 
-.h-16 {
-  height: 4rem;
+.h-14 {
+  height: 3.5rem;
 }
 
-.h-20 {
-  height: 5rem;
+.h-16 {
+  height: 4rem;
 }
 
 .h-4 {
@@ -747,10 +752,6 @@ video {
 
 .h-full {
   height: 100%;
-}
-
-.h-14 {
-  height: 3.5rem;
 }
 
 .w-1\/2 {
@@ -1225,6 +1226,22 @@ body {
   max-height: 300px;
 }
 
+/* bg-neutral rounded-sm px-2 py-1 text-xs font-normal hover:bg-white transition-all hover:text-primary */
+
+/*Skill buttons*/
+
+.skillBtn{
+  border: solid white 1px;
+  margin: 5px;
+  padding: 2px 5px;
+  background-color: transparent;
+  transition: background-color .3s ease-in-out;
+}
+
+.skillBtn:hover{
+  background-color: white;
+}
+
 .last\:mr-0:last-child {
   margin-right: 0px;
 }
@@ -1407,4 +1424,3 @@ body {
   --tw-rotate: 180deg;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
-
