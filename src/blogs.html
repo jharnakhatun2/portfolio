@@ -96,16 +96,13 @@
       <!-- header and total blogs  -->
       <div class="flex flex-row items-center">
         <h1 class="text-3xl mb-6 uppercase font-extrabold">Blog</h1>
-        <div class="bg-gray text-white px-1 rounded text-xs ml-3 self-start">
-          25
+        <div id="blogCount" class="bg-gray text-white px-1 rounded text-xs ml-3 self-start">
         </div>
       </div>
       <!-- Page-specific content goes here -->
       <!-- sidebar -->
       <div class="block md:flex gap-8">
-        <!-- Left Side -->
-       
-          <div class="">
+        <!-- Left Side -->  
             <div>
               <!-- search bar -->
               <div
@@ -136,7 +133,7 @@
               </div>
               <!-- Blog Card Start -->
               <div
-                class="max-w-4xl px-10 my-4 py-6 bg-white rounded-lg shadow-md"
+                class="blogCard max-w-4xl px-10 my-4 py-6 bg-white rounded-lg shadow-md"
               >
                 <div class="flex justify-between items-center">
                   <span class="font-light text-gray">Sep 18, 2024</span>
@@ -171,8 +168,6 @@
               </div>
                <!-- Blog Card End-->
             </div>
-          </div>
-        
         <!-- right side -->
         <div class="w-full md:w-3/12">
           <h1 class="text-lg uppercase font-bold">Categories</h1>
