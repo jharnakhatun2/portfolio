@@ -99,20 +99,20 @@
           </div>
         </div>
         <div class="flex flex-row items-center mb-6 justify-between">
-          <div>
+          <!------------- Sorting -------------->
             <div class="flex flex-row items-center">
               <div class="text-sm text-gray-500 mr-1">Sort by:</div>
               <div>
-                <select class="text-sm">
-                  <option value="startDateDesc" selected="">JavaScript</option>
-                  <option value="starsDesc">HTML</option>
-                  <option value="starsDesc">DOM</option>
-                  <option value="starsDesc">React</option>
-                  <option value="starsDesc">Next</option>
+                <select class="text-sm" id="sort-select">
+                  <option value="javascript" selected="">JavaScript</option>
+                  <option value="html">HTML</option>
+                  <option value="css">CSS</option>
+                  <option value="dom">DOM</option>
+                  <option value="react">React</option>
+                  <option value="next">Next</option>
                 </select>
               </div>
             </div>
-          </div>
           <!-- search bar -->
           <div
             class="relative flex items-center w-2/12 h-10 rounded-lg focus-within:shadow-lg bg-white overflow-hidden"
@@ -144,11 +144,11 @@
         </div>
       </div>
       <!-- Page-specific content goes here -->
-      <div
+      <div id="projects-container"
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 sm:gap-12 justify-items-center"
       >
         <!-- Project Card -->
-        <div
+        <div data-tags="javascript,react,html"
           class="projectCard bg-gray shadow-md border border-white rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700"
         >
           <a href="#">
@@ -162,7 +162,7 @@
             <!-- header -->
             <a href="#">
               <h5 class="text-white font-bold text-2xl tracking-tight mb-2">
-                Noteworthy technology acquisitions 2021
+                0Noteworthy technology acquisitions 2021
               </h5>
             </a>
             <!-- date and star -->
@@ -317,7 +317,7 @@
           </div>
         </div>
         <!-- Project Card -->
-        <div
+        <div data-tags="html,css"
           class="projectCard bg-gray shadow-md border border-white rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700"
         >
           <a href="#">
@@ -331,7 +331,7 @@
             <!-- header -->
             <a href="#">
               <h5 class="text-white font-bold text-2xl tracking-tight mb-2">
-                Noteworthy technology acquisitions 2021
+                1Noteworthy technology acquisitions 2021
               </h5>
             </a>
             <!-- date and star -->
@@ -486,7 +486,7 @@
           </div>
         </div>
         <!-- Project Card -->
-        <div
+        <div data-tags="next"
           class="projectCard bg-gray shadow-md border border-white rounded-lg max-w-sm dark:bg-gray-800 dark:border-gray-700"
         >
           <a href="#">
@@ -500,7 +500,7 @@
             <!-- header -->
             <a href="#">
               <h5 class="text-white font-bold text-2xl tracking-tight mb-2">
-                Noteworthy technology acquisitions 2021
+                2Noteworthy technology acquisitions 2021
               </h5>
             </a>
             <!-- date and star -->
