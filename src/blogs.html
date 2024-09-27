@@ -131,8 +131,9 @@
                   placeholder="Search ..."
                 />
               </div>
+              <div id="blog-container">
               <!-- Blog Card Start -->
-              <div
+              <div data-tags="javascript"
                 class="blogCard max-w-4xl px-10 my-4 py-6 bg-white rounded-lg shadow-md"
               >
                 <div class="flex justify-between items-center">
@@ -167,34 +168,107 @@
                 </div>
               </div>
                <!-- Blog Card End-->
+              <!-- Blog Card Start -->
+              <div data-tags="next"
+                class="blogCard max-w-4xl px-10 my-4 py-6 bg-white rounded-lg shadow-md"
+              >
+                <div class="flex justify-between items-center">
+                  <span class="font-light text-gray">Sep 18, 2024</span>
+                  <p
+                    class="text-sm px-2 py-1 bg-neutral text-white font-bold rounded hover:bg-gray"
+                    >Next.js</p
+                  >
+                </div>
+                <div class="mt-2">
+                  <h1 class="text-2xl font-bold hover:text-gray" 
+                    >The debounce technique for JavaScript form validation</h1
+                  >
+                  <p class="mt-2 text-gray text-justify">
+                    We use the debounce technique for JavaScript form validation to prevent excessive validation calls, improve performance, reduce network/API calls and more.
+                  </p>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                  <a class="text-secondary hover:underline" href="https://jharnakhatun.medium.com/the-debounce-technique-for-javascript-form-validation-91d39f3fad46" target="_blank"
+                    >Read more</a
+                  >
+                  <div>
+                    <a class="flex items-center" href="#">
+                      <img
+                        class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block"
+                        src="https://i.ibb.co.com/G29Bn3G/profile.png"
+                        alt="avatar"
+                      />
+                      <h1 class="text-gray-700 font-bold">Jharna Khatun</h1>
+                    </a>
+                  </div>
+                </div>
+              </div>
+               <!-- Blog Card End-->
+              <!-- Blog Card Start -->
+              <div data-tags="react"
+                class="blogCard max-w-4xl px-10 my-4 py-6 bg-white rounded-lg shadow-md"
+              >
+                <div class="flex justify-between items-center">
+                  <span class="font-light text-gray">Sep 18, 2024</span>
+                  <p
+                    class="text-sm px-2 py-1 bg-neutral text-white font-bold rounded hover:bg-gray"
+                    >React.js</p
+                  >
+                </div>
+                <div class="mt-2">
+                  <h1 class="text-2xl font-bold hover:text-gray" 
+                    >The debounce technique for JavaScript form validation</h1
+                  >
+                  <p class="mt-2 text-gray text-justify">
+                    We use the debounce technique for JavaScript form validation to prevent excessive validation calls, improve performance, reduce network/API calls and more.
+                  </p>
+                </div>
+                <div class="flex justify-between items-center mt-4">
+                  <a class="text-secondary hover:underline" href="https://jharnakhatun.medium.com/the-debounce-technique-for-javascript-form-validation-91d39f3fad46" target="_blank"
+                    >Read more</a
+                  >
+                  <div>
+                    <a class="flex items-center" href="#">
+                      <img
+                        class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block"
+                        src="https://i.ibb.co.com/G29Bn3G/profile.png"
+                        alt="avatar"
+                      />
+                      <h1 class="text-gray-700 font-bold">Jharna Khatun</h1>
+                    </a>
+                  </div>
+                </div>
+              </div>
+               <!-- Blog Card End-->
             </div>
+          </div>
         <!-- right side -->
         <div class="w-full md:w-3/12">
           <h1 class="text-lg uppercase font-bold">Categories</h1>
           <!-- categories -->
-          <div class="flex flex-wrap gap-3 py-2 text-sm">
-            <button
-              class="bg-neutral py-1 px-2 rounded border border-neutral hover:border-white hover:bg-opacity-0 text-black transition-colors"
+          <div id="category-select" class="flex flex-wrap gap-3 py-2 text-sm">
+            <button value="html"
+              class="sort-btn bg-neutral py-1 px-2 rounded border border-neutral hover:border-white hover:bg-opacity-0 text-black transition-colors"
             >
               HTML
             </button>
-            <button
-              class="bg-neutral py-1 px-2 rounded border border-neutral hover:border-white hover:bg-opacity-0 text-black transition-colors"
+            <button value="tailwind"
+              class="sort-btn bg-neutral py-1 px-2 rounded border border-neutral hover:border-white hover:bg-opacity-0 text-black transition-colors"
             >
               Tailwind
             </button>
-            <button
-              class="bg-neutral py-1 px-2 rounded border border-neutral hover:border-white hover:bg-opacity-0 text-black transition-colors"
+            <button value="javascript"
+              class="sort-btn bg-neutral py-1 px-2 rounded border border-neutral hover:border-white hover:bg-opacity-0 text-black transition-colors"
             >
               JavaScript
             </button>
-            <button
-              class="bg-neutral py-1 px-2 rounded border border-neutral hover:border-white hover:bg-opacity-0 text-black transition-colors"
+            <button value="react"
+              class="sort-btn bg-neutral py-1 px-2 rounded border border-neutral hover:border-white hover:bg-opacity-0 text-black transition-colors"
             >
               React.js
             </button>
-            <button
-              class="bg-neutral py-1 px-2 rounded border border-neutral hover:border-white hover:bg-opacity-0 text-black transition-colors"
+            <button value="next"
+              class="sort-btn bg-neutral py-1 px-2 rounded border border-neutral hover:border-white hover:bg-opacity-0 text-black transition-colors"
             >
               Next.js
             </button>
@@ -309,5 +383,6 @@
       </div>
     </main>
     <script src="script.js"></script>
+    <script src="./js/blog.js"></script>
   </body>
 </html>
