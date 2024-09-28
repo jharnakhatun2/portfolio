@@ -35,3 +35,54 @@ function totalLengthCount(total, cards) {
 }
 totalLengthCount(projectsCount, projectCards);
 totalLengthCount(blogsCount, blogCards);
+
+
+// Search function
+document.querySelectorAll('.search-input').forEach( input => {
+  input.addEventListener('input', function(){
+    const inputEl = this.value.toLowerCase();
+   
+    function singleCards(cards){
+      cards.forEach(card=>{
+        const title = card.querySelector('.title').textContent.toLowerCase();
+        const description = card.querySelector('.description').textContent.toLowerCase();
+  
+        if(title.includes(inputEl) || description.includes(inputEl)){
+          card.classList.remove('hidden');
+        }else{
+          card.classList.add('hidden');
+        }
+      })
+    }
+    singleCards(projectCards);
+    singleCards(blogCards);
+  })
+})
+// console.log();
+
+
+// Search function
+// document.querySelectorAll('.search-input').forEach(input => {
+//   input.addEventListener('input', function() {
+//     const inputEl = this.value.toLowerCase();
+    
+//     const projectCards = document.querySelectorAll(".projectCard");
+//     const blogCards = document.querySelectorAll(".blogCard");
+
+//     function singleCards(cards) {
+//       cards.forEach(card => {
+//         const title = card.querySelector('.title').textContent.toLowerCase();
+//         const description = card.querySelector('.description').textContent.toLowerCase();
+
+//         if (title.includes(inputEl) || description.includes(inputEl)) {
+//           card.classList.remove('hidden');
+//         } else {
+//           card.classList.add('hidden');
+//         }
+//       });
+//     }
+    
+//     singleCards(projectCards);  // Handle project cards search
+//     singleCards(blogCards);     // Handle blog cards search
+//   });
+// });
