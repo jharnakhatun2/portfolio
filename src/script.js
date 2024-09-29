@@ -38,51 +38,69 @@ totalLengthCount(blogsCount, blogCards);
 
 
 // Search function
-document.querySelectorAll('.search-input').forEach( input => {
-  input.addEventListener('input', function(){
-    const inputEl = this.value.toLowerCase();
-   
-    function singleCards(cards){
-      cards.forEach(card=>{
-        const title = card.querySelector('.title').textContent.toLowerCase();
-        const description = card.querySelector('.description').textContent.toLowerCase();
-  
-        if(title.includes(inputEl) || description.includes(inputEl)){
-          card.classList.remove('hidden');
-        }else{
-          card.classList.add('hidden');
-        }
-      })
-    }
-    singleCards(projectCards);
-    singleCards(blogCards);
-  })
-})
-// console.log();
-
-
-// Search function
-// document.querySelectorAll('.search-input').forEach(input => {
-//   input.addEventListener('input', function() {
+// document.querySelectorAll('.search-input').forEach( input => {
+//   input.addEventListener('input', function(){
 //     const inputEl = this.value.toLowerCase();
-    
-//     const projectCards = document.querySelectorAll(".projectCard");
-//     const blogCards = document.querySelectorAll(".blogCard");
-
-//     function singleCards(cards) {
-//       cards.forEach(card => {
+   
+//     function singleCards(cards){
+//       cards.forEach(card=>{
 //         const title = card.querySelector('.title').textContent.toLowerCase();
 //         const description = card.querySelector('.description').textContent.toLowerCase();
-
-//         if (title.includes(inputEl) || description.includes(inputEl)) {
+  
+//         if(title.includes(inputEl) || description.includes(inputEl)){
 //           card.classList.remove('hidden');
-//         } else {
+//         }else{
 //           card.classList.add('hidden');
 //         }
-//       });
+//       })
 //     }
+//     singleCards(projectCards);
+//     singleCards(blogCards);
+//   })
+// })
+
+// Search function
+document.querySelectorAll('.search-input').forEach(input => {
+  input.addEventListener('input', function() {
+    const inputEl = this.value.toLowerCase();
+
+    const projectCards = document.querySelectorAll(".projectCard");
+    const blogCards = document.querySelectorAll(".blogCard");
     
-//     singleCards(projectCards);  // Handle project cards search
-//     singleCards(blogCards);     // Handle blog cards search
-//   });
-// });
+    const projectContainer = document.querySelector(".project-container");
+    const blogContainer = document.querySelector(".blog-container");
+
+    let projectFound = false;
+    let blogFound = false;
+
+    function singleCards(cards, container) {
+      let found = false;
+
+      cards.forEach(card => {
+        const title = card.querySelector('.title').textContent.toLowerCase();
+        const description = card.querySelector('.description').textContent.toLowerCase();
+
+        if (title.includes(inputEl) || description.includes(inputEl)) {
+          card.classList.remove('hidden');
+          found = true;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      if (!found) {
+        container.querySelector('.no-results').classList.remove('hidden');
+      } else {
+        container.querySelector('.no-results').classList.add('hidden');
+      }
+
+      return found;
+    }
+
+    // Handle project cards search
+    projectFound = singleCards(projectCards, projectContainer);
+    
+    // Handle blog cards search
+    blogFound = singleCards(blogCards, blogContainer);
+  });
+});
