@@ -103,7 +103,7 @@
       <!-- sidebar -->
       <div class="block md:flex gap-8">
         <!-- Left Side -->  
-            <div>
+            <div class="w-full md:w-9/12 ">
               <!-- search bar -->
               <div
                 class="relative flex items-center w-full md:w-4/12 h-10 rounded-lg focus-within:shadow-lg bg-white overflow-hidden"
@@ -132,8 +132,8 @@
                 />
               </div>
               <!-- Blog Cards -->
-              <div id="blog-container">
-              <!-- Blog Card Start -->
+              <div class="blog-container">
+              <!-- Blog Card -->
               <div data-tags="javascript"
                 class="blogCard max-w-4xl px-10 my-4 py-6 bg-white rounded-lg shadow-md"
               >
@@ -168,8 +168,7 @@
                   </div>
                 </div>
               </div>
-               <!-- Blog Card End-->
-              <!-- Blog Card Start -->
+              <!-- Blog Card -->
               <div data-tags="next"
                 class="blogCard max-w-4xl px-10 my-4 py-6 bg-white rounded-lg shadow-md"
               >
@@ -204,8 +203,7 @@
                   </div>
                 </div>
               </div>
-               <!-- Blog Card End-->
-              <!-- Blog Card Start -->
+              <!-- Blog Card -->
               <div data-tags="react"
                 class="blogCard max-w-4xl px-10 my-4 py-6 bg-white rounded-lg shadow-md"
               >
@@ -240,13 +238,15 @@
                   </div>
                 </div>
               </div>
-               <!-- Blog Card End-->
               <!-- search missing content -->
-               <p class="no-results hidden">No blogs found matching your search.</p>
+               <div class="no-results hidden mt-8">
+                <p class="font-bold ">No blogs found matching your search.</p>
+               </div>
+               
             </div>
           </div>
         <!-- right side -->
-        <div class="w-full md:w-3/12">
+        <div class="w-full md:w-3/12 ">
           <h1 class="text-lg uppercase font-bold">Categories</h1>
           <!-- categories -->
           <div id="category-select" class="flex flex-wrap gap-3 py-2 text-sm">

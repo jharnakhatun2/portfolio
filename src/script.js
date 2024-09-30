@@ -16,8 +16,7 @@ closeBtn.addEventListener("click", function () {
 });
 
 
-// Project.html and blog.html
-// 1. total project card length
+// 1. total project card length for Project.html and blog.html
 
 // Project Count
 const projectsCount = document.getElementById("projectCount");
@@ -37,49 +36,29 @@ totalLengthCount(projectsCount, projectCards);
 totalLengthCount(blogsCount, blogCards);
 
 
-// Search function
-// document.querySelectorAll('.search-input').forEach( input => {
-//   input.addEventListener('input', function(){
-//     const inputEl = this.value.toLowerCase();
-   
-//     function singleCards(cards){
-//       cards.forEach(card=>{
-//         const title = card.querySelector('.title').textContent.toLowerCase();
-//         const description = card.querySelector('.description').textContent.toLowerCase();
-  
-//         if(title.includes(inputEl) || description.includes(inputEl)){
-//           card.classList.remove('hidden');
-//         }else{
-//           card.classList.add('hidden');
-//         }
-//       })
-//     }
-//     singleCards(projectCards);
-//     singleCards(blogCards);
-//   })
-// })
 
 // Search function
 document.querySelectorAll('.search-input').forEach(input => {
   input.addEventListener('input', function() {
     const inputEl = this.value.toLowerCase();
 
+    // Selecting all project and blog cards
     const projectCards = document.querySelectorAll(".projectCard");
     const blogCards = document.querySelectorAll(".blogCard");
     
+    // Selecting the project and blog containers
     const projectContainer = document.querySelector(".project-container");
     const blogContainer = document.querySelector(".blog-container");
 
-    let projectFound = false;
-    let blogFound = false;
-
+    // Function to handle showing and hiding cards based on input
     function singleCards(cards, container) {
-      let found = false;
+      let found = false; // Flag to track if any card matches the search term
 
       cards.forEach(card => {
         const title = card.querySelector('.title').textContent.toLowerCase();
         const description = card.querySelector('.description').textContent.toLowerCase();
 
+        // Check if title or description contains the search term
         if (title.includes(inputEl) || description.includes(inputEl)) {
           card.classList.remove('hidden');
           found = true;
@@ -88,19 +67,22 @@ document.querySelectorAll('.search-input').forEach(input => {
         }
       });
 
+      // Show 'No results' message if no cards were found
       if (!found) {
         container.querySelector('.no-results').classList.remove('hidden');
       } else {
         container.querySelector('.no-results').classList.add('hidden');
       }
-
-      return found;
     }
 
-    // Handle project cards search
-    projectFound = singleCards(projectCards, projectContainer);
-    
-    // Handle blog cards search
-    blogFound = singleCards(blogCards, blogContainer);
+    // Handle project cards search, ensure container exists
+    if (projectContainer) {
+      singleCards(projectCards, projectContainer);
+    }
+
+    // Handle blog cards search, ensure container exists
+    if (blogContainer) {
+      singleCards(blogCards, blogContainer);
+    }
   });
 });

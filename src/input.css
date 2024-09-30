@@ -41,7 +41,3 @@ transition: background-color .3s ease-in-out;
   background-color: white;
 }
 
-/* for search function */
-.hidden {
-  display: none;
-}

@@ -148,9 +148,7 @@
         </div>
       </div>
       <!-- Page-specific content goes here -->
-      <div
-        id="projects-container"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 sm:gap-12 justify-items-center"
+      <div class="project-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 sm:gap-12 justify-items-center"
       >
         <!-- Project Card -->
         <div
@@ -675,7 +673,10 @@
           </div>
         </div>
         <!-- Message to show when no results are found -->
-        <p class="no-results hidden">No projects found matching your search.</p>
+         <div class="no-results hidden h-screen">
+          <p class="font-bold bg-neutral px-9 py-7">No projects found matching your search.</p>
+         </div>
+        
       </div>
       <!-- bottom -->
       <div class="flex justify-between mt-10">
