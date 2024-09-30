@@ -26,3 +26,46 @@ document.getElementById('sort-select').addEventListener('change', function() {
     container.innerHTML = '';
     projects.forEach(project => container.appendChild(project));
 });
+
+
+
+//function for view more button
+document.addEventListener('DOMContentLoaded', function() {
+    const itemsPerPage = 3;  // Number of items to show by default
+    let currentIndex = itemsPerPage;  // Start by showing the first 6 items
+  
+    const projectCards = document.querySelectorAll('.projectCard');
+    const viewMoreBtn = document.getElementById('view-more');
+  
+    // Function to display more items
+    function displayMoreItems() {
+      const nextIndex = currentIndex + itemsPerPage;
+  
+      projectCards.forEach((card, index) => {
+        if (index >= currentIndex && index < nextIndex) {
+          card.style.display = 'block'; // Show the card
+        }
+      });
+  
+      currentIndex = nextIndex;  // Update the current index
+  
+      // Hide the "View More" button if all items are shown
+      if (currentIndex >= projectCards.length) {
+        viewMoreBtn.style.display = 'none';
+      }
+    }
+  
+    // Initially hide all cards
+    projectCards.forEach(card => card.style.display = 'none');
+  
+    // Display the first 6 items when the page loads
+    projectCards.forEach((card, index) => {
+      if (index < itemsPerPage) {
+        card.style.display = 'block';
+      }
+    });
+  
+    // Event listener for "View More" button
+    viewMoreBtn.addEventListener('click', displayMoreItems);
+  });
+  

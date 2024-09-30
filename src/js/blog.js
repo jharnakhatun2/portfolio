@@ -26,7 +26,7 @@ buttons.forEach(button => {
     });
 
     // Clear the current blogs container and re-append sorted blogs
-    const container = document.getElementById('blog-container');
+    const container = document.querySelector('.blog-container');
     container.innerHTML = '';
     blogs.forEach(project => container.appendChild(project));
   });
