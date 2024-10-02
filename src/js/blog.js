@@ -33,3 +33,39 @@ buttons.forEach(button => {
 });
 
 
+
+// recent post function
+document.addEventListener("DOMContentLoaded", function() {
+  // Select all blog posts from the left sidebar
+  const allBlogPosts = document.querySelectorAll(".blog-container .blogCard .title");
+
+  // Select the container for recent posts in the right sidebar
+  const recentPostsList = document.getElementById("recent-posts-list");
+
+  // Clear any existing posts in the recent posts list
+  recentPostsList.innerHTML = "";
+
+  // Limit to the 4 most recent posts
+  const recentPosts = Array.from(allBlogPosts).slice(0, 4);
+
+  // Loop through the recent posts and display them in the right sidebar
+  recentPosts.forEach(post => {
+    // Create a new list item
+    const li = document.createElement("li");
+    li.classList.add("py-2"); 
+
+    // Create a new anchor element and copy the href and text from the original post
+    const a = document.createElement("a");
+    a.href = post.href; 
+    a.textContent = post.textContent; 
+
+    // Append the anchor to the list item
+    li.appendChild(a);
+
+    // Append the list item to the recent posts list in the right sidebar
+    recentPostsList.appendChild(li);
+  });
+});
+
+
+
