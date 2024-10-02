@@ -68,21 +68,28 @@ document.querySelectorAll('.search-input').forEach(input => {
       });
 
       // Show 'No results' message if no cards were found
-      if (!found) {
-        container.querySelector('.no-results').classList.remove('hidden');
-      } else {
-        container.querySelector('.no-results').classList.add('hidden');
+      const noResultsEl = container.querySelector('.no-results');
+      if(noResultsEl){
+        if (!found) {
+          noResultsEl.classList.remove('hidden');
+        } else {
+          noResultsEl.classList.add('hidden');
+        }
       }
     }
 
     // Handle project cards search, ensure container exists
-    if (projectContainer) {
+    if (projectContainer && projectCards.length) {
       singleCards(projectCards, projectContainer);
+    } else {
+      console.warn('No project container or project cards found.');
     }
 
     // Handle blog cards search, ensure container exists
-    if (blogContainer) {
+    if (blogContainer && blogCards.length) {
       singleCards(blogCards, blogContainer);
+    }else {
+      console.warn('No blog container or blog cards found.');
     }
   });
 });

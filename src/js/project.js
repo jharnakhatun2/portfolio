@@ -22,7 +22,7 @@ document.getElementById('sort-select').addEventListener('change', function() {
     });
 
     // Clear and re-append sorted projects
-    const container = document.getElementById('projects-container');
+    const container = document.querySelector('.project-container');
     container.innerHTML = '';
     projects.forEach(project => container.appendChild(project));
 });
@@ -68,4 +68,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Event listener for "View More" button
     viewMoreBtn.addEventListener('click', displayMoreItems);
   });
+
   
