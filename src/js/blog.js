@@ -41,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Select the container for recent posts in the right sidebar
   const recentPostsList = document.getElementById("recent-posts-list");
+  
 
   // Clear any existing posts in the recent posts list
   recentPostsList.innerHTML = "";
@@ -50,6 +51,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Loop through the recent posts and display them in the right sidebar
   recentPosts.forEach(post => {
+    const postLink = post.querySelector('.read-more a');
     // Create a new list item
     const li = document.createElement("li");
     li.classList.add("py-2"); 
@@ -57,6 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Create a new anchor element and copy the href and text from the original post
     const a = document.createElement("a");
     a.href = post.href; 
+    a.target = post.target;
     a.textContent = post.textContent; 
 
     // Append the anchor to the list item
