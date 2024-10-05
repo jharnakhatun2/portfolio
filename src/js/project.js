@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const viewMoreBtn = document.getElementById('view-more');
   
     // Function to display more items
-    function displayMoreItems() {
+    function displayMoreItems(cards) {
       const nextIndex = currentIndex + itemsPerPage;
   
       projectCards.forEach((card, index) => {

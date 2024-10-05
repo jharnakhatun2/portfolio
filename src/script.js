@@ -45,7 +45,10 @@ document.querySelectorAll('.search-input').forEach(input => {
     // Selecting all project and blog cards
     const projectCards = document.querySelectorAll(".projectCard");
     const blogCards = document.querySelectorAll(".blogCard");
+    const viewMoreBtn = document.getElementById('view-more');
     
+    let visibleCards = [];
+
     // Selecting the project and blog containers
     const projectContainer = document.querySelector(".project-container");
     const blogContainer = document.querySelector(".blog-container");
@@ -60,10 +63,11 @@ document.querySelectorAll('.search-input').forEach(input => {
 
         // Check if title or description contains the search term
         if (title.includes(inputEl) || description.includes(inputEl)) {
-          card.classList.remove('hidden');
-          found = true;
+            card.style.display = 'block';
+            found = true;
+            visibleCards.push(card);
         } else {
-          card.classList.add('hidden');
+          card.style.display = 'none';
         }
       });
 
@@ -80,13 +84,23 @@ document.querySelectorAll('.search-input').forEach(input => {
 
     // Handle project cards search, ensure container exists
     if (projectContainer && projectCards.length) {
+      console.log('Project search triggered');
+      visibleCards = [];
       singleCards(projectCards, projectContainer);
+      // Hide the View More button when search results are shown
+      if (inputEl.length > 0) {
+        viewMoreBtn.style.display = 'none';
+      } else {
+        updateViewMore(visibleCards); // Only show View More when there is no search or search is cleared
+      }
+      
     } else {
       console.warn('No project container or project cards found.');
     }
 
     // Handle blog cards search, ensure container exists
     if (blogContainer && blogCards.length) {
+      console.log('Blog search triggered');
       singleCards(blogCards, blogContainer);
     }else {
       console.warn('No blog container or blog cards found.');
