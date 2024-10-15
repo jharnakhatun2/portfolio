@@ -15,7 +15,6 @@ closeBtn.addEventListener("click", function () {
   closeBtn.style.display = "none";
 });
 
-
 // 1. total project card length for Project.html and blog.html
 
 // Project Count
@@ -35,18 +34,16 @@ function totalLengthCount(total, cards) {
 totalLengthCount(projectsCount, projectCards);
 totalLengthCount(blogsCount, blogCards);
 
-
-
 // Search function
-document.querySelectorAll('.search-input').forEach(input => {
-  input.addEventListener('input', function() {
+document.querySelectorAll(".search-input").forEach((input) => {
+  input.addEventListener("input", function () {
     const inputEl = this.value.toLowerCase();
 
     // Selecting all project and blog cards
     const projectCards = document.querySelectorAll(".projectCard");
     const blogCards = document.querySelectorAll(".blogCard");
-    const viewMoreBtn = document.getElementById('view-more');
-    
+    const viewMoreBtn = document.getElementById("view-more");
+
     let visibleCards = [];
 
     // Selecting the project and blog containers
@@ -57,53 +54,77 @@ document.querySelectorAll('.search-input').forEach(input => {
     function singleCards(cards, container) {
       let found = false; // Flag to track if any card matches the search term
 
-      cards.forEach(card => {
-        const title = card.querySelector('.title').textContent.toLowerCase();
-        const description = card.querySelector('.description').textContent.toLowerCase();
+      cards.forEach((card) => {
+        const title = card.querySelector(".title").textContent.toLowerCase();
+        const description = card
+          .querySelector(".description")
+          .textContent.toLowerCase();
 
         // Check if title or description contains the search term
         if (title.includes(inputEl) || description.includes(inputEl)) {
-            card.style.display = 'block';
-            found = true;
-            visibleCards.push(card);
+          card.style.display = "block";
+          found = true;
+          visibleCards.push(card);
         } else {
-          card.style.display = 'none';
+          card.style.display = "none";
         }
       });
 
       // Show 'No results' message if no cards were found
-      const noResultsEl = container.querySelector('.no-results');
-      if(noResultsEl){
+      const noResultsEl = container.querySelector(".no-results");
+      if (noResultsEl) {
         if (!found) {
-          noResultsEl.classList.remove('hidden');
+          noResultsEl.classList.remove("hidden");
         } else {
-          noResultsEl.classList.add('hidden');
+          noResultsEl.classList.add("hidden");
         }
       }
     }
 
     // Handle project cards search, ensure container exists
     if (projectContainer && projectCards.length) {
-      console.log('Project search triggered');
+      console.log("Project search triggered");
       visibleCards = [];
       singleCards(projectCards, projectContainer);
       // Hide the View More button when search results are shown
       if (inputEl.length > 0) {
-        viewMoreBtn.style.display = 'none';
+        viewMoreBtn.style.display = "none";
       } else {
         updateViewMore(visibleCards); // Only show View More when there is no search or search is cleared
       }
-      
     } else {
-      console.warn('No project container or project cards found.');
+      console.warn("No project container or project cards found.");
     }
 
     // Handle blog cards search, ensure container exists
     if (blogContainer && blogCards.length) {
-      console.log('Blog search triggered');
+      console.log("Blog search triggered");
       singleCards(blogCards, blogContainer);
-    }else {
-      console.warn('No blog container or blog cards found.');
+    } else {
+      console.warn("No blog container or blog cards found.");
     }
   });
 });
+
+//contact form with emailjs
+function sendEmail() {
+  let templateParams = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value,
+  };
+
+  const serviceID = "service_xs02b38";
+  const templateID = "template_8wnbzmb";
+
+  emailjs
+    .send(serviceID, templateID, templateParams)
+    .then((response) => {
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("message").value = "";
+      console.log(response);
+      alert("your message sent successfully");
+    })
+    .catch((err) => console.log(err));
+}
