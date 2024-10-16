@@ -106,25 +106,3 @@ document.querySelectorAll(".search-input").forEach((input) => {
   });
 });
 
-//contact form with emailjs
-function sendEmail() {
-  let templateParams = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    message: document.getElementById("message").value,
-  };
-
-  const serviceID = "service_xs02b38";
-  const templateID = "template_8wnbzmb";
-
-  emailjs
-    .send(serviceID, templateID, templateParams)
-    .then((response) => {
-      document.getElementById("name").value = "";
-      document.getElementById("email").value = "";
-      document.getElementById("message").value = "";
-      console.log(response);
-      alert("your message sent successfully");
-    })
-    .catch((err) => console.log(err));
-}
