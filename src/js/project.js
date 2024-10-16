@@ -69,4 +69,29 @@ document.addEventListener('DOMContentLoaded', function() {
     viewMoreBtn.addEventListener('click', displayMoreItems);
   });
 
+// toggle extra tags
+ // Select all toggle links
+const toggleLinks = document.querySelectorAll('.toggle-tags');
+
+toggleLinks.forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    
+    // Find the closest .tags element (within the same card)
+    const tagsContainer = this.closest('.tags');
+    
+    // Find all extra-tags within this card's tags container
+    const extraTags = tagsContainer.querySelectorAll('.extra-tags');
+    
+    // Toggle the hidden class for each extra tag
+    const isHidden = extraTags[0].classList.contains('hidden');
+    extraTags.forEach(tag => {
+      tag.classList.toggle('hidden');
+    });
+    
+    // Update the link text based on the state
+    this.textContent = isHidden ? '- less' : '+ more';
+  });
+});
+  
   
