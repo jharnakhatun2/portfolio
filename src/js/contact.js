@@ -28,4 +28,25 @@ function sendEmail() {
   
 
 //   form validation
+function showMessage(input, message, type){
+    const small = input.querySelector('small');
+    small.innerText = message;
+    input.className = type? 'success' : 'error';
+    return type;
+}
 
+function showError(input, message){
+  return showMessage(input, message, false);
+}
+
+function showSuccess(input){
+  return showMessage(input, "", true);
+}
+
+const nameMsg = "Please enter your name";
+const emailMsg = "Please enter your email";
+const emailInvalid = "Please enter a correct email address format";
+
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+})
