@@ -106,3 +106,25 @@ document.querySelectorAll(".search-input").forEach((input) => {
   });
 });
 
+
+// header active color
+  // Function to set the active class based on the current URL
+  document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('nav ul li');
+    const currentPath = window.location.pathname.split('/').pop(); // Get current page
+
+    // Loop through each link and set the active class based on the current page
+    navLinks.forEach(link => {
+      const linkPage = link.querySelector('a').getAttribute('href');
+      if (linkPage === currentPath) {
+        link.classList.add('active'); // Add active class
+      }
+
+      // Optional: Add click event listener to change active state
+      link.addEventListener('click', () => {
+        navLinks.forEach(item => item.classList.remove('active')); // Remove active class from all
+        link.classList.add('active'); // Add active class to clicked link
+      });
+    });
+  });
+

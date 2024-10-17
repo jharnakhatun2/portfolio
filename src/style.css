@@ -717,6 +717,10 @@ video {
   height: 50%;
 }
 
+.h-1\/5 {
+  height: 20%;
+}
+
 .h-10 {
   height: 2.5rem;
 }
@@ -741,12 +745,48 @@ video {
   height: 2rem;
 }
 
+.h-\[203px\] {
+  height: 203px;
+}
+
 .h-full {
   height: 100%;
 }
 
+.h-\[302px\] {
+  height: 302px;
+}
+
+.h-\[300px\] {
+  height: 300px;
+}
+
+.h-\[280px\] {
+  height: 280px;
+}
+
+.h-\[220px\] {
+  height: 220px;
+}
+
+.h-\[240px\] {
+  height: 240px;
+}
+
+.h-\[250px\] {
+  height: 250px;
+}
+
+.h-\[255px\] {
+  height: 255px;
+}
+
 .w-1\/2 {
   width: 50%;
+}
+
+.w-1\/5 {
+  width: 20%;
 }
 
 .w-10 {
@@ -759,6 +799,10 @@ video {
 
 .w-2 {
   width: 0.5rem;
+}
+
+.w-2\/4 {
+  width: 50%;
 }
 
 .w-4 {
@@ -777,8 +821,8 @@ video {
   width: 100%;
 }
 
-.w-2\/4 {
-  width: 50%;
+.w-\[300px\] {
+  width: 300px;
 }
 
 .max-w-4xl {
@@ -1243,10 +1287,10 @@ video {
 
 * {
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
   background: url("https://i.ibb.co.com/MNF3sm5/1.png") no-repeat fixed center ;
   background-size: cover;
 }
@@ -1289,6 +1333,11 @@ body {
 
 .recent-post{
   padding: 30px 0;
+}
+
+.active a {
+  font-weight: bold;
+  color: rgb(3, 3, 3);
 }
 
 .last\:mr-0:last-child {
@@ -1371,24 +1420,20 @@ body {
     display: flex;
   }
 
-  .sm\:w-1\/4 {
-    width: 25%;
+  .sm\:w-1\/2 {
+    width: 50%;
   }
 
   .sm\:w-2\/12 {
     width: 16.666667%;
   }
 
-  .sm\:w-3\/4 {
-    width: 75%;
-  }
-
-  .sm\:w-1\/2 {
-    width: 50%;
-  }
-
   .sm\:w-2\/4 {
     width: 50%;
+  }
+
+  .sm\:w-3\/4 {
+    width: 75%;
   }
 
   .sm\:flex-row {

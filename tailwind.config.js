@@ -10,7 +10,14 @@ module.exports = {
       white: '#ffffff',
       black: '#000000'
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+        Inter : ["Inter", "sans-serif"],
+        Mulish : ["Mulish", "sans-serif"],
+        Quicksand : ["Quicksand", "serif"]
+      },
+    },
   },
   plugins: [],
 }
